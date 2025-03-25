@@ -1,0 +1,420 @@
+@import url('https://fonts.cdnfonts.com/css/clear-sans');
+
+@keyframes expandirImagem {
+  0% {
+      transform: translate(-50%, -50%) scale(0.5); /* Inicia com a imagem pequena */
+      opacity: 0; /* Começa invisível */
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1); /* Fica no tamanho original */
+      opacity: 1; /* Fica visível */
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #24263b;
+  font-family: 'Clear Sans', sans-serif;
+}
+
+
+.roxo {
+  font-size: 48px;
+  color: #8c52ff;
+  margin: 0;
+  padding: 0;
+}
+.codigoHTML{
+  color: rgb(88, 88, 88);
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Menu */
+.ContainerbuttonsMenu{
+  background-color: #fe5366;
+  height: 100vh;
+
+  position: relative; 
+  transition: width 0.3s ease;
+}
+
+
+.textInicialMeuNome{
+  position: fixed;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+.textInicialMeuNome h1{
+  font-size: 100px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.buttonsMenu{
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: space-between;
+  padding: 10% 0 10% 0;
+  height: 90%;
+} 
+
+.buttonsMenu button{
+  background-color: #fe5366;
+  border: 0px;
+  height: 100px;
+  font-size: 35px;
+  
+}
+
+.buttonDownload{
+  text-align: center;
+}
+
+.buttonDownload button{
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+.right-button {
+  position: absolute;
+  top: 50%;
+  right: -15px; /* Mantém o botão fora do menu */
+  transform: translateY(-50%);
+  padding: 8px 12px;
+  background-color: #fe5366;
+  color: white;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: right 0.3s ease;
+}
+
+.buttonDownload button:hover{
+  transition: 0.4s;
+  background-color: #ea4153;
+}
+.buttonsMenu button:hover{
+  transition: 0.4s;
+
+  background-color: #ea4153;
+}
+.right-button:hover{
+  transition: 0.4s;
+  background-color: #ea4153;
+}
+
+
+.resultadoButtonsMenu{
+  height: 100vh;
+
+}
+
+
+
+/* Contact me */
+.ContactMe{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 10% 0;
+
+}
+.ContactMe h1{
+  font-size: 58px;
+}
+.ContactMe img{
+  border: 4px solid #8c52ff;
+  border-radius: 100%;
+}
+.tiltleContactMe{
+  margin-top: 5%;
+}
+.tiltleContactMe p{
+  color: rgb(88, 88, 88);
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.icones{
+  padding: 10% 0;
+}
+.icones a{
+  margin: 10%;
+}
+
+.imagemGrande {
+  position: fixed;
+  top: 50%;
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 10;
+  cursor: pointer;
+  border: 4px solid #8c52ff;
+  border-radius: 0%;
+  height: 500px;
+  transition: transform 0.3s ease, max-width 0.3s ease, max-height 0.3s ease;
+
+}
+.fundoBorrado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 5;
+  transition: opacity 0.3s ease;
+
+}
+.imgExpandida .imagemGrande {
+  animation: expandirImagem 0.1s ease-out forwards; 
+  max-width: 95%;
+  max-height: 95%;
+}
+
+
+
+
+/*AboutMe*/
+.AboutMe{
+  padding: 5% 4% 5% 5%;
+}
+
+.AboutMe h1{
+  font-size: 48px;
+}
+
+.paragrafosAboutMe2{
+  margin: 3% 0% 0% 0%;
+}
+.paragrafosAboutMe3{
+  margin: 1% 0% 5% 0%;
+}
+.paragrafo{
+  font-size: 22px;
+}
+
+
+
+/*Skils*/
+.Skils{
+  padding: 5% 4% 10% 5%;
+}
+.setorDeEscolha{
+  margin: 2% 0;
+}
+
+.setorDeEscolha select{
+  border: 1px solid #393b55;
+  background-color: #24263b;
+  margin: 2% 0;
+  width: 100%;
+  height: 50px;
+
+}
+.setorDeEscolha select option{
+  border: none;
+  background-color: #24263b;
+}
+
+.mostrarSkils{
+  padding: 0% 2% 2% 0%; 
+  overflow: auto;
+  height: 250px;
+}
+.mostrarSkils::-webkit-scrollbar {
+  width: 10px;
+}
+.mostrarSkils::-webkit-scrollbar-track {
+  background: #393b55;
+}
+.mostrarSkils::-webkit-scrollbar-thumb {
+  background: #24263b;
+}
+.mostrarSkils img {
+  margin: 2%;
+}
+.skilsName{
+  display: flex;
+  border-bottom: 1px solid #393b55;
+  margin-bottom: 1%;
+  align-items: center; 
+  
+}
+.skilsName:hover{
+  background-color: #393b55;
+}
+.skilsName img{
+  margin-right: 5%;
+}
+
+
+
+/*Projects*/
+.Projecs{
+  padding: 5% 4% 10% 5%;
+}
+.topSkils{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topSkils select{
+  border: 1px solid #393b55;
+  background-color: #24263b;
+  margin: 2% 0;
+  width: 70%;
+  height: 50px;
+  font-size: 16px;
+  padding: 10px;
+}
+.topSkils select option{
+  border: none;
+  background-color: #24263b;
+
+}
+.mostrarProjects{
+  margin-top: 5%;
+ 
+}
+.mostrarProjects::-webkit-scrollbar {
+  width: 10px;
+}
+.mostrarProjects::-webkit-scrollbar-track {
+  background: #393b55;
+  
+}
+.mostrarProjects::-webkit-scrollbar-thumb {
+  background: #24263b;
+}
+.projectsIndi{
+  padding: 2% 1%;
+  
+  margin-bottom: 2%;
+  border-bottom: 1px solid #393b55;
+  border-left: 1px solid #393b55;
+}
+.projectsIndi:hover{
+  background-color: #393b55;
+}
+.skilsDeCadaProjeto{
+  display: flex;
+  margin-bottom: 10px
+}
+.skilsDeCadaProjeto p {
+  background-color: #523095;
+  border: 1px solid #523095;
+  color: #ae91e9;
+  text-align: center;
+  margin-right: 2%;
+  border-radius: 15px;
+  height: 22px;
+  width: auto;
+  padding: 1px 10px;
+}
+.mostrarImgProject{
+  text-align: center;
+}
+
+.mostrarImgProject img {
+  width: 100%;
+  max-width: 700px; 
+  height: auto;
+  max-height: 1000px;
+}
+
+@media (max-width: 1080px) { 
+  .mostrarImgProject img {
+    max-width: 1000px;  
+    max-height: 700px;  
+  }
+}
+
+@media (max-width: 800px) { 
+  .mostrarImgProject img {
+    max-width: 500px;  
+    max-height: 300px;  
+  }
+}
+
+@media (max-width: 300px) { 
+  .mostrarImgProject img {
+    display: none; /* Em telas muito pequenas, esconde a imagem */
+  }
+}
+
+
+
+/*Education e experience*/
+.Education{
+  padding: 5% 4% 10% 5%;
+}
+.mostrarEducation{
+  margin: 2% 0;
+}
+.containerEdu{
+  display: flex;
+  margin-bottom: 2%;
+  padding: 10px;
+  border-bottom: 1px solid #393b55;
+}
+.containerEdu:hover {
+  background-color: #393b55;
+}
+.datas{
+  display: flex;
+  width: 50px;
+}
+.nomeETC{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+.nomeETC p{
+  margin: 5px 0;
+}
+.skilsDeCadaProjetoEd{
+  display: flex;
+  margin-bottom: 2%;
+  margin-top: 1%; 
+}
+.skilsDeCadaProjetoEd p {
+  background-color: #523095;
+  border: 1px solid #523095;
+  color: #ae91e9;
+  text-align: center;
+  margin-right:   2%;
+  border-radius: 15px;
+  height: 22px;
+  width: auto;
+  padding: 1px 10px;
+}
+
+
+
