@@ -11,6 +11,8 @@ const Project = ({mostrarMenu}) => {
         setUrlAtual(event.currentTarget.getAttribute("data-url"));
     }
 
+    const width = window.innerWidth;
+
     return(
         <div className="Projecs">
             <div className="topSkils">
@@ -30,8 +32,8 @@ const Project = ({mostrarMenu}) => {
             </div>
             <div style={{display:"flex",  flexDirection: mostrarMenu ? "column" : "row-reverse"}}>
                 <div className="mostrarProjects" style={{
-                     height: mostrarMenu ? "300px" : "600px",
-                     overflow:"auto"
+                    height: mostrarMenu ? width < 768 ? "200px":"250px" : width < 768 ? "300px": "400px",
+                    overflow:"auto"
                 }}>
                     
                     {   
