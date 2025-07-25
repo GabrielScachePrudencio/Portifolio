@@ -1,5 +1,22 @@
 const listaProjects = [
     {
+        name: "Jogo Impar ou Par Multiplayer online",
+        describe: "Jogo Impar ou Par Multiplayer online é um projeto do jogo impar ou par de forma online e com interfaces graficas",
+        url: "/imgs/projects/projImpar.png",
+        skils: ["JAVA"],
+        links: "https://github.com/GabrielScachePrudencio/AplicationImparOuPar",
+        tipo: "SD",
+    },
+    {
+        name: "Trio na Cozinha",
+        describe: "Trio na Cozinha é um site que ultiliza de servlets e ajax",
+        url: "/imgs/projects/projTrio.png",
+        skils: ["JAVA", "Ajax", "JAVASCRIPT", "HTML", "CSS"],
+        links: "https://github.com/GabrielScachePrudencio/trioNaCozinha_pt2_final",
+        tipo: "webB",
+    },
+    
+    {
         name: "Gerenciador de Listas",
         describe: "Gerenciamento de Listas Este projeto é uma aplicação de gerenciamento de listas de tarefas desenvolvida com React. O objetivo principal é fornecer uma interface simples e funcional para adicionar, editar, marcar como concluídas e excluir tarefas.",
         url: "/imgs/projects/projListas.png",

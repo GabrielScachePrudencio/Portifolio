@@ -1,5 +1,11 @@
 const listaSkils = [
     {
+        name: "Spring Boot",
+        url: "/imgs/Skils/springB.png",
+        tipo: "webB",
+        
+    },
+    {
         name: "React",
         url: "/imgs/Skils/React-icon.png",
         tipo: "webF",
@@ -15,6 +21,16 @@ const listaSkils = [
         name: "Javascript",
         url: "/imgs/Skils/javascript.png",
         tipo: "webF",
+    },
+    {
+        name: "MySql",
+        url: "/imgs/Skils/mysql.png",
+        tipo: "webB",
+    },
+    {
+        name: "Ajax",
+        url: "/imgs/Skils/ajax.png",
+        tipo: "webB",
     },
     {
         name: "Python",

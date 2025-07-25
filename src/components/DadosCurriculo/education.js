@@ -9,6 +9,15 @@ const listaEducation = [
 
     },
     {
+        name: "Spring Boot Expert: JPA, REST, JWT, OAuth2 com Docker e AWS",
+        modalidade: "Online",
+        tipo: "Tecnico",
+        dataIn: "2025",
+        dataFi: "Infinito",
+        tec: ["Spring-Boot","JAVA","JPA", "REST", "JWT", "OAuth2 com Docker e AWS"]
+
+    },
+    {
         name: "Curso Full Stack Web TipsCode",
         modalidade: "Online",
         tipo: "Tecnico",
