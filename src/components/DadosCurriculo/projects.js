@@ -1,4 +1,13 @@
 const listaProjects = [
+    
+    {
+        name: "Chat API",
+        describe: "Chat API é um chat em tempo real feito com somente java e com banco de dados hospedado",
+        url: "/imgs/projects/projChatApi.png",
+        skils: ["JAVA"],
+        links: "https://github.com/CaioDalNegro/chat-backend-api",
+        tipo: "SD",
+    },
     {
         name: "Jogo Impar ou Par Multiplayer online",
         describe: "Jogo Impar ou Par Multiplayer online é um projeto do jogo impar ou par de forma online e com interfaces graficas",

@@ -6,6 +6,12 @@ const listaSkils = [
         
     },
     {
+        name: "Docker",
+        url: "/imgs/Skils/docker.png",
+        tipo: "webB",
+        
+    },
+    {
         name: "React",
         url: "/imgs/Skils/React-icon.png",
         tipo: "webF",
