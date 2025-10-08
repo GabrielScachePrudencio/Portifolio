@@ -6,7 +6,6 @@ const listaEducation = [
         dataIn: "2024",
         dataFi: "2026",
         tec: ["C","JAVA","HTML","CSS","JAVASCRIPT","SQL","KOTLIN"]
-
     },
     {
         name: "Spring Boot Expert: JPA, REST, JWT, OAuth2 com Docker e AWS",
@@ -15,7 +14,6 @@ const listaEducation = [
         dataIn: "2025",
         dataFi: "Infinito",
         tec: ["Spring-Boot","JAVA","JPA", "REST", "JWT", "OAuth2 com Docker e AWS"]
-
     },
     {
         name: "Curso Full Stack Web TipsCode",
@@ -32,6 +30,31 @@ const listaEducation = [
         dataIn: "2024",
         dataFi: "2025",
         tec: ["PYTHON", "MACHINE_LEARNING"],
+    },
+    // Novos cursos adicionados
+    {
+        name: "Curso de Programação C# Completo com .NET",
+        modalidade: "Online",
+        tipo: "Tecnico",
+        dataIn: "2025",
+        dataFi: "Infinito",
+        tec: ["C#", ".NET", "ORIENTAÇÃO A OBJETOS", "ALGORITMOS", "BANCO DE DADOS"]
+    },
+    {
+        name: "AWS Academy - Fundamentos de AWS",
+        modalidade: "Online",
+        tipo: "Tecnico",
+        dataIn: "2025",
+        dataFi: "Infinito",
+        tec: ["AWS", "CLOUD", "SERVIÇOS AWS"]
+    },
+    {
+        name: "Cisco Networking Academy",
+        modalidade: "Online",
+        tipo: "Tecnico",
+        dataIn: "2025",
+        dataFi: "Infinito",
+        tec: ["REDES", "PROTOCOLOS", "CIBERSEGURANÇA", "INFRAESTRUTURA"]
     }
 ];
 

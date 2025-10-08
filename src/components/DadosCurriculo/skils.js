@@ -3,25 +3,21 @@ const listaSkils = [
         name: "Spring Boot",
         url: "/imgs/Skils/springB.png",
         tipo: "webB",
-        
     },
     {
         name: "Docker",
         url: "/imgs/Skils/docker.png",
         tipo: "webB",
-        
     },
     {
         name: "React",
         url: "/imgs/Skils/React-icon.png",
         tipo: "webF",
-        
     },
     {
         name: "Java",
         url: "/imgs/Skils/java.png",
         tipo: "SD",
-
     },
     {
         name: "Javascript",
@@ -62,12 +58,28 @@ const listaSkils = [
         name: "HTML CSS",
         url: "/imgs/Skils/HTML-CSS-Review.png",
         tipo: "webF",
+    },
+
+    {
+        name: "AWS",
+        url: "/imgs/Skils/aws.png",
+        tipo: "SD",
+    },
+    {
+        name: "Redes",
+        url: "/imgs/Skils/redecisco.png",
+        tipo: "SD",
+    },
+    {
+        name: "C#",
+        url: "/imgs/Skils/cs.png",
+        tipo: "SD",
+    },
+        {
+        name: ".NET",
+        url: "/imgs/Skils/net.png",
+        tipo: "SD",
     }
-
-
-    
-   
 ]
-
 
 export default listaSkils;
