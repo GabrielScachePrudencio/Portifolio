@@ -1,56 +1,57 @@
-import React, {useState} from "react";
-
-import Menu from "../tasks/Menu";
-import ContactMe from "../tasks/ContactMe";
+import React, { useState } from "react";
+import Sidebar from "../tasks/Sidebar";
 import AboutMe from "../tasks/AboutMe";
-import Skils from "../tasks/Skils";
+import Skills from "../tasks/Skils";
 import Project from "../tasks/Project";
 import Experience from "../tasks/Experience";
 import Education from "../tasks/Education";
+import ContactMe from "../tasks/ContactMe";
+import "../../styles/portfolio.css";
 
+function Main() {
+  const [activePage, setActivePage] = useState("AboutMe");
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
-/*
-torna-lo resposivel
-arrumar education deixar retinho os textos
-deixar a imgem de projects do tamanho certa 
+  // typewriter state (lifted so it persists when navigating back)
+  const [twText, setTwText]     = useState("");
+  const [twIndex, setTwIndex]   = useState(0);
+  const [twDeleting, setTwDeleting] = useState(false);
 
+  return (
+    <div className="portfolio-app">
+      <Sidebar
+        activePage={activePage}
+        setActivePage={setActivePage}
+        collapsed={sidebarCollapsed}
+        setCollapsed={setSidebarCollapsed}
+      />
 
-*/
-function Main(){
-    const [inputMenu, setInputMenu] = useState("AboutMe");
-    const [mostrarMenu, setMostrarMenu] = useState(true);
-    const [mostrarMeuNomePrim, setMostrarMeuNomePrim] = useState(true);
-
-    //para about me 
-    const [text, setText] = useState("");
-    const [index, setIndex] = useState(0);
-    const [deletando, setDeletando] = useState(false);
-
-    return(
-        <main className="main">
-            
-            <Menu setInputMenu={setInputMenu} mostrarMenu={mostrarMenu} setMostrarMenu={setMostrarMenu} mostrarMeuNomePrim={mostrarMeuNomePrim} setMostrarMeuNomePrim={setMostrarMeuNomePrim}/>
-            
-            <div className="resultadoButtonsMenu" style={{width: mostrarMenu === true && mostrarMeuNomePrim === true ? "5%" : "95%"}}>
-                {
-                    mostrarMeuNomePrim === false && (
-
-                        <>
-                            {inputMenu === "ContactMe" && <ContactMe />}
-                            {inputMenu === "AboutMe" && <AboutMe text={text} setText={setText} index={index} setIndex={setIndex} deletando={deletando} setDeletando={setDeletando}/>}
-                            {inputMenu === "Skils" && <Skils />}
-                            {inputMenu === "Experience" && <Experience />}
-                            {inputMenu === "Project" && <Project mostrarMenu={mostrarMenu}/>}
-                            {inputMenu === "Education" && <Education />}
-                        </>
-                    )
-                            
-            }
-            </div>
-        </main>
-    )
+      <div className="portfolio-content">
+        <div className={`page ${activePage === "AboutMe" ? "active" : ""}`}>
+          <AboutMe
+            text={twText}       setText={setTwText}
+            index={twIndex}     setIndex={setTwIndex}
+            deletando={twDeleting} setDeletando={setTwDeleting}
+          />
+        </div>
+        <div className={`page ${activePage === "Skills" ? "active" : ""}`}>
+          <Skills />
+        </div>
+        <div className={`page ${activePage === "Project" ? "active" : ""}`}>
+          <Project />
+        </div>
+        <div className={`page ${activePage === "Experience" ? "active" : ""}`}>
+          <Experience />
+        </div>
+        <div className={`page ${activePage === "Education" ? "active" : ""}`}>
+          <Education />
+        </div>
+        <div className={`page ${activePage === "ContactMe" ? "active" : ""}`}>
+          <ContactMe />
+        </div>
+      </div>
+    </div>
+  );
 }
-
-
 
 export default Main;

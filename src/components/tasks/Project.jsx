@@ -1,94 +1,92 @@
-import React, {useState} from "react";
-
+import React, { useState } from "react";
 import listaProjects from "../DadosCurriculo/projects";
 
+const FILTERS = [
+  { value: "All",  label: "All areas"      },
+  { value: "webF", label: "Web Front-End"  },
+  { value: "webB", label: "Web Back-End"   },
+  { value: "IA",   label: "Machine Learning"},
+  { value: "SD",   label: "System Dev"     },
+];
 
-const Project = ({mostrarMenu}) => {
-    const [areaEscolhida, setAreaEscolhida] = useState("All");
-    const [urlAtual, setUrlAtual] = useState("/imgs/projects/projListas.png");
+function Project() {
+  const [area, setArea]         = useState("All");
+  const [preview, setPreview]   = useState(null);
 
-    function mostrarImgDaUrlAtual(event){
-        setUrlAtual(event.currentTarget.getAttribute("data-url"));
-    }
+  const filtered = area === "All"
+    ? listaProjects
+    : listaProjects.filter((p) => p.tipo === area);
 
-    const width = window.innerWidth;
+  // auto-select first when filter changes
+  const displayPreview = preview && filtered.includes(preview) ? preview : filtered[0] || null;
 
-    return(
-        <div className="Projecs">
-            <div className="topSkils">
-                <div className="tiltleSkils">
-                    <p className="codigoHTML">{"<h1>"}</p>
-                    <h1 className="roxo"> My Projects </h1>
-                    <p className="codigoHTML">{"</h1>"}</p>
-                </div>
-
-                <select name="" className="opcoesSkils" value={areaEscolhida} onChange={(e) => setAreaEscolhida(e.target.value)}>
-                        <option value={"All"}>Todas as areas</option>
-                        <option value={"webF"}>Web Front-End</option>
-                        <option value={"webB"}>Web Back-End </option>
-                        <option value={"IA"}>Machine Learning</option>
-                        <option value={"SD"}>System Development</option>
-                </select>
-            </div>
-            <div style={{display:"flex",  flexDirection: mostrarMenu ? "column" : "row-reverse"}}>
-                <div className="mostrarProjects" style={{
-                    height: mostrarMenu ? width < 768 ? "200px":"250px" : width < 768 ? "300px": "400px",
-                    overflow:"auto"
-                }}>
-                    
-                    {   
-                        listaProjects.filter(skill => areaEscolhida === "All" || skill.tipo === areaEscolhida).length === 0 ? (
-                            <div className="semProjetos">
-                                <h2>Sem projetos</h2>
-                            </div>
-                        ) : (
-
-                        
-                        listaProjects.filter(skill => areaEscolhida === "All" || skill.tipo === areaEscolhida)
-                        .map((skill, index) => (
-                            <div
-                            href={skill.links}
-                            key={index} 
-                            className="projectsIndi" 
-                            data-url={skill.url} 
-                            onMouseEnter={mostrarImgDaUrlAtual}
-                            onClick={() => window.open(skill.links, "_blank")}
-                            style={{
-                                width: mostrarMenu ? "auto" : "900px"
-                            }}
-                            >
-                                    <div className="skilsDeCadaProjeto">
-                                            {skill.skils.map((skil, index) => (
-                                                <p key={index}>{skil}</p>
-                                            ))}
-                                    </div>
-                                    <h2>{skill.name}</h2>
-                                {
-                                    skill.name === "" && "Sem projetos" 
-                                }
-                            </div>
-                            ))
-                    
-                )
-                }
-
-                </div>
-
-                <div className="mostrarImgProject" 
-                    style={
-                        {
-                            padding: mostrarMenu===false && "10% 5% 10% 0%",
-                            textAlign: "center"
-                        }
-                    }
-                >
-                    <img src={urlAtual} alt="" width={mostrarMenu===false && "100%"}/>
-                </div>
-            </div>
+  return (
+    <div>
+      <div className="projects-top">
+        <div>
+          <div className="section-tag">// PROJECTS</div>
+          <div className="section-title" style={{ marginBottom: 0 }}>
+            My <span className="hl">Work</span>
+          </div>
         </div>
-    )
+        <select
+          className="projects-select"
+          value={area}
+          onChange={(e) => { setArea(e.target.value); setPreview(null); }}
+        >
+          {FILTERS.map((f) => (
+            <option key={f.value} value={f.value}>{f.label}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="projects-layout">
+        {/* List */}
+        <div className="projects-list">
+          {filtered.length === 0 ? (
+            <p className="project-empty">// no projects found</p>
+          ) : (
+            filtered.map((p, i) => (
+              <div
+                key={i}
+                className={`project-item ${displayPreview === p ? "selected" : ""}`}
+                onMouseEnter={() => setPreview(p)}
+                onClick={() => window.open(p.links, "_blank")}
+              >
+                <div className="project-name">{p.name}</div>
+                <div className="project-tags">
+                  {p.skils.map((s, j) => (
+                    <span className="project-tag" key={j}>{s}</span>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+
+        {/* Preview panel */}
+        <div className="project-preview">
+          {displayPreview ? (
+            <>
+              <img
+                className="preview-img"
+                src={displayPreview.url}
+                alt={displayPreview.name}
+              />
+              <div
+                className="preview-open"
+                onClick={() => window.open(displayPreview.links, "_blank")}
+              >
+                ↗ Open project
+              </div>
+            </>
+          ) : (
+            <div className="preview-placeholder">hover a project</div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }
-
-
 
 export default Project;

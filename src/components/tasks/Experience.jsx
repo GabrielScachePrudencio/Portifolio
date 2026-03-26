@@ -1,39 +1,32 @@
 import React from "react";
-
 import listaExperience from "../DadosCurriculo/exeperience";
 
-function Education(){
-    return(
-        <div className="Education">
-            <div className="tiltleSkils">
-                <p className="codigoHTML">{"<h1>"}</p>
-                <h1 className="roxo"> Experience </h1>
-                <p className="codigoHTML">{"</h1>"}</p>
+function Experience() {
+  return (
+    <div>
+      <div className="section-tag">// EXPERIENCE</div>
+      <div className="section-title">
+        Work <span className="hl">History</span>
+      </div>
+
+      <div className="timeline">
+        {listaExperience.map((item, i) => (
+          <div className="timeline-item" key={i}>
+            <div className="tl-dates">
+              {item.dataIn} — {item.dataFi}
             </div>
-            <div className="mostrarEducation">
-                {
-                    listaExperience.map((skill, index) => (
-                        <div className="containerEdu">
-                            <div className="datas">
-                                <p>{skill.dataIn + "-"} </p> <p> {skill.dataFi}</p> 
-                            </div>
-                            <div className="nomeETC">
-                                <h2>{skill.instituicao}</h2>
-                                <p>{skill.modalidade}</p>
-                                <div className="skilsDeCadaProjetoEd">
-                                    {skill.tec.map((skil, index) => (
-                                        <p>{skil}</p>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
+            <div className="tl-name">{item.instituicao}</div>
+            <div className="tl-sub">{item.modalidade}</div>
+            <div className="tl-tags">
+              {item.tec.map((t, j) => (
+                <span className="tl-tag" key={j}>{t}</span>
+              ))}
             </div>
-        </div>
-    )
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-
-
-export default Education;
+export default Experience;
